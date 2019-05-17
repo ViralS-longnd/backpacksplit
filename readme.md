@@ -90,6 +90,9 @@ class StoreCrudController extends CrudController
 
 to use SplitCRUD and result:
 
+![image](https://user-images.githubusercontent.com/50614639/57922518-2de1a400-78ca-11e9-9567-7bc3ca970300.png)
+
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
