@@ -1,0 +1,43 @@
+{
+    "name": "longnd/backpacksplit",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LongND",
+            "email": "longnd@viralsoft.vn",
+            "homepage": "github.com"
+        }
+    ],
+    "homepage": "https://github.com/longnd/backpacksplit",
+    "keywords": ["Laravel", "BackpackSplit"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LongND\\BackpackSplit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LongND\\BackpackSplit\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LongND\\BackpackSplit\\BackpackSplitServiceProvider"
+            ],
+            "aliases": {
+                "BackpackSplit": "LongND\\BackpackSplit\\Facades\\BackpackSplit"
+            }
+        }
+    }
+}
