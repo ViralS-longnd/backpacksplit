@@ -54,6 +54,9 @@ class StoreCrudController extends CrudController
 
 to use ModalCRUD and result:
 
+![image](https://user-images.githubusercontent.com/50614639/57922381-d4797500-78c9-11e9-87ca-e659fd198df1.png)
+
+
 ####OR
 
 ``` bash
