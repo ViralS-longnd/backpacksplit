@@ -40,6 +40,15 @@ class BackpackSplitServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
+                // AUTO PUBLISH
+        // if (\App::environment('local')) {
+        //     if ($this->shouldAutoPublishPublic()) {
+        //         \Artisan::call('vendor:publish', [
+        //             '--provider' => 'LongND\BackpackSplit\BackpackSplitProvider',
+        //             '--tag' => 'public',
+        //         ]);
+        //     }
+        // }
     }
 
     /**
@@ -49,8 +58,8 @@ class BackpackSplitServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/config/backpacksplit.php', 'backpacksplit.php');
         $this->commands($this->commands);
-
         // Register the service the package provides.
         $this->app->singleton('backpacksplit', function ($app) {
             return new BackpackSplit;
@@ -75,9 +84,9 @@ class BackpackSplitServiceProvider extends ServiceProvider
     protected function bootForConsole()
     {
         // Publishing the configuration file.
-        // $this->publishes([
-        //     __DIR__.'/../config/backpacksplit.php' => config_path('backpacksplit.php'),
-        // ], 'backpacksplit.config');
+        $this->publishes([
+            __DIR__.'/config/backpacksplit.php' => config_path('backpacksplit.php'),
+        ], 'backpacksplit.config');
 
         // Publishing the views.
         $this->publishes([__DIR__.'/resources/views' => base_path('resources/views')], 'views');

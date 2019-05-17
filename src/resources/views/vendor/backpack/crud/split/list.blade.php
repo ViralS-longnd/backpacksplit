@@ -17,7 +17,7 @@
 @section('content')
 <!-- Default box -->
 <div class="alert alert-success" style="display:none">
-  
+
 </div>
 <div class="row">
     <div class="{{ $crud->getListContentClass() }}">
@@ -99,7 +99,7 @@
           @endif
 
         </div><!-- /.box-body -->
-        <div class="col-md-4" id="show">
+        <div class="{{ config('backpacksplit.split_class') }}" id="show">
         </div>
       </div><!-- /.box -->
     </div>

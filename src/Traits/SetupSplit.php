@@ -6,8 +6,12 @@ use Illuminate\Support\Collection;
 
 trait SetupSplit
 {
-    public function setUpSplit()
+    public function setUpSplit(string $listClassSplit = 'col-md-8')
     {
+        config(['backpacksplit.split_class_div' => $listClassSplit]);
+        $listClassDiv = (int) preg_replace('/[^0-9]/', '', $listClassSplit);
+        $listClass = 'col-md-'.(12-$listClassDiv);
+        config(['backpacksplit.split_class' => $listClass]);
         $this->crud->setCreateView('crud::split.create');
         $this->crud->setEditView('crud::split.edit');
         $this->crud->setListView('crud::split.list');

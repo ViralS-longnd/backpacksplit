@@ -21,8 +21,8 @@
             url: url,
             dataType: 'html',
             success: function(result) {
-                $('#list').removeClass('col-md-12');
-                $('#list').addClass('col-md-8');
+                $('#list').removeClass('{{ $crud->getListContentClass() }}');
+                $('#list').addClass('{{ config('backpacksplit.split_class_div') }}');
                 $('#show').html(result);
                 crud.table.ajax.reload();
             },
@@ -44,8 +44,8 @@
             url: url,
             data: $(this).serialize(),
             success: function(result) {
-                $('#list').removeClass('col-md-8');
-                $('#list').addClass('col-md-12');
+                $('#list').removeClass('{{ config('backpacksplit.split_class_div') }}');
+                $('#list').addClass('{{ $crud->getListContentClass() }}');
                 $('#show').empty();
                 crud.table.ajax.reload();
                 $('.alert-success').show();
@@ -70,8 +70,8 @@
      $(document).on('click', '#cancel', function(e) {
         e.preventDefault();
         hideMessage();
-        $('#list').removeClass('col-md-8');
-        $('#list').addClass('col-md-12');
+        $('#list').removeClass('{{ config('backpacksplit.split_class_div') }}');
+        $('#list').addClass('{{ $crud->getListContentClass() }}');
         $('#show').empty();
         crud.table.ajax.reload();
      });
