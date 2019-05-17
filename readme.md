@@ -16,6 +16,76 @@ $ composer require longnd/backpacksplit
 ```
 
 ## Usage
+Optional you can publish the configuration to provide a different service provider stub. The default is here.
+
+``` bash
+$ php artisan vendor:publish --provider="LongND\BackpackSplit\BackpackSplitServiceProvider"
+```
+With DemoCrudController in App\Http\Controller\Admin\DemoCrudController we edit it:
+
+``` bash
+namespace App\Http\Controllers\Admin;
+
+use Backpack\CRUD\app\Http\Controllers\DemoController;
+
+
+// VALIDATION: change the requests to match your own file names if you need form validation
+use App\Http\Requests\DemoRequest as StoreRequest;
+use App\Http\Requests\DemoRequest as UpdateRequest;
+use Backpack\CRUD\CrudPanel;
+use LongND\BackpackSplit\Traits\SetupModal;
+
+/**
+ * Class StoreCrudController
+ * @package App\Http\Controllers\Admin
+ * @property-read CrudPanel $crud
+ */
+class StoreCrudController extends CrudController
+{
+    use SetupModal;
+    public function setup()
+    {
+        //code-here....
+        $this->setupModal();
+        //code-here...
+    }
+}
+```
+
+to use ModalCRUD and result:
+
+####OR
+
+``` bash
+namespace App\Http\Controllers\Admin;
+
+use Backpack\CRUD\app\Http\Controllers\DemoController;
+
+
+// VALIDATION: change the requests to match your own file names if you need form validation
+use App\Http\Requests\DemoRequest as StoreRequest;
+use App\Http\Requests\DemoRequest as UpdateRequest;
+use Backpack\CRUD\CrudPanel;
+use LongND\BackpackSplit\Traits\SetupSplit;
+
+/**
+ * Class StoreCrudController
+ * @package App\Http\Controllers\Admin
+ * @property-read CrudPanel $crud
+ */
+class StoreCrudController extends CrudController
+{
+    use SetupSplit;
+    public function setup()
+    {
+        //code-here....
+        $this->setupSplit('col-md-8');
+        //code-here...
+    }
+}
+```
+
+to use SplitCRUD and result:
 
 ## Change log
 
