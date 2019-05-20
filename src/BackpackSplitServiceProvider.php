@@ -3,26 +3,16 @@
 namespace LongND\BackpackSplit;
 
 use LongND\BackpackSplit\Console\Commands\CrudBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\ViewBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\ModelBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\ConfigBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\RequestBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\CrudModelBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\CrudRequestBackpackCommand;
-use LongND\BackpackSplit\Console\Commands\CrudControllerBackpackCommand;
+use LongND\BackpackSplit\Console\Commands\CrudControllerSplitBackpackCommand;
+use LongND\BackpackSplit\Console\Commands\CrudControllerModalBackpackCommand;
 use Illuminate\Support\ServiceProvider;
 
 class BackpackSplitServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        ConfigBackpackCommand::class,
-        CrudModelBackpackCommand::class,
-        CrudControllerBackpackCommand::class,
-        CrudRequestBackpackCommand::class,
+        CrudControllerSplitBackpackCommand::class,
+        CrudControllerModalBackpackCommand::class,
         CrudBackpackCommand::class,
-        ModelBackpackCommand::class,
-        RequestBackpackCommand::class,
-        ViewBackpackCommand::class,
     ];
     /**
      * Perform post-registration booting of services.

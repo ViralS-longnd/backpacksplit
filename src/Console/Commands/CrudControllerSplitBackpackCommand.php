@@ -4,7 +4,7 @@ namespace LongND\BackpackSplit\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
-class CrudControllerBackpackCommand extends GeneratorCommand
+class CrudControllerSplitBackpackCommand extends GeneratorCommand
 {
     /**
      * The console command name.
@@ -55,7 +55,7 @@ class CrudControllerBackpackCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/../stubs/crud-controller.stub';
+        return __DIR__.'/../stubs/crud-split-controller.stub';
     }
 
     /**

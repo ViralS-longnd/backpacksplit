@@ -37,7 +37,7 @@ class DummyClassCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->setUpSplit();
+        $this->setupSplit();
 
         $this->crud->setFromDb();
 

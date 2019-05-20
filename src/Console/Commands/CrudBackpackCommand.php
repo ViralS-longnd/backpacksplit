@@ -12,7 +12,7 @@ class CrudBackpackCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'backpack:split:crud {name}';
+    protected $signature = 'backpack:crud {name} {--option=}';
 
     /**
      * The console command description.
@@ -29,17 +29,25 @@ class CrudBackpackCommand extends Command
     public function handle()
     {
         $name = ucfirst($this->argument('name'));
-
         // Create the CRUD Controller and show output
-        Artisan::call('backpack:split:crud-controller', ['name' => $name]);
-        echo Artisan::output();
+        if ($this->option('option') == 'split') {
+            Artisan::call('backpack:split:crud-controller', ['name' => $name]);
+            echo Artisan::output();
+        } elseif ($this->option('option') == 'modal') {
+            Artisan::call('backpack:modal:crud-controller', ['name' => $name]);
+            echo Artisan::output();
+        } else {
+            Artisan::call('backpack:crud-controller', ['name' => $name]);
+            echo Artisan::output();
+        }
+
 
         // Create the CRUD Model and show output
-        Artisan::call('backpack:split:crud-model', ['name' => $name]);
+        Artisan::call('backpack:crud-model', ['name' => $name]);
         echo Artisan::output();
 
         // Create the CRUD Request and show output
-        Artisan::call('backpack:split:crud-request', ['name' => $name]);
+        Artisan::call('backpack:crud-request', ['name' => $name]);
         echo Artisan::output();
     }
 }
