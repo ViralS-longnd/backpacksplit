@@ -54,6 +54,9 @@ class StoreCrudController extends CrudController
 
 to use ModalCRUD and result:
 
+![image](https://user-images.githubusercontent.com/50614639/57922381-d4797500-78c9-11e9-87ca-e659fd198df1.png)
+
+
 ####OR
 
 ``` bash
@@ -86,6 +89,9 @@ class StoreCrudController extends CrudController
 ```
 
 to use SplitCRUD and result:
+
+![image](https://user-images.githubusercontent.com/50614639/57922518-2de1a400-78ca-11e9-9567-7bc3ca970300.png)
+
 
 ## Change log
 
