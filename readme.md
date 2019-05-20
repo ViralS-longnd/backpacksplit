@@ -21,7 +21,7 @@ Optional you can publish the configuration to provide a different service provid
 ``` bash
 $ php artisan vendor:publish --provider="LongND\BackpackSplit\BackpackSplitServiceProvider"
 ```
-With DemoCrudController in App\Http\Controller\Admin\DemoCrudController we edit it:
+With DemoCrudController in App\Http\Controller\Admin\DemoCrudController we edit it if you have a default CRUD Controller:
 
 ``` bash
 namespace App\Http\Controllers\Admin;
@@ -51,7 +51,10 @@ class StoreCrudController extends CrudController
     }
 }
 ```
-
+and if you want to create new backpack controller with modal crud you try:
+```bash
+$ php artisan backpack:crud demo --option=modal
+```
 to use ModalCRUD and result:
 
 ![image](https://user-images.githubusercontent.com/50614639/57922381-d4797500-78c9-11e9-87ca-e659fd198df1.png)
@@ -87,7 +90,10 @@ class StoreCrudController extends CrudController
     }
 }
 ```
-
+and if you want to create new backpack controller with split crud you try:
+```bash
+$ php artisan backpack:crud demo --option=split
+```
 to use SplitCRUD and result:
 
 ![image](https://user-images.githubusercontent.com/50614639/57922518-2de1a400-78ca-11e9-9567-7bc3ca970300.png)
